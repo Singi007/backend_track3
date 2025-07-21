@@ -15,10 +15,8 @@ const app = express();
 app.use(cookieParser());
 
 const allowedOrigins = [
-    'https://track-cargo.vercel.app',
-    'http://localhost:5173'
+    'https://www.texmonlogistics.co.ke'
 ];
-
 
 const corsOptions = {
     origin: function (origin, callback) {
