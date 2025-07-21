@@ -14,26 +14,14 @@ const app = express();
 // Middleware to parse cookies
 app.use(cookieParser());
 
-const allowedOrigins = [
-    'https://www.texmonlogistics.co.ke'
-];
 
-
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (allowedOrigins.includes(origin) || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization']
-};
 
 // CORS configuration
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: "https://www.texmonlogistics.co.ke",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true
+}));
 
 
 // Body parsing
