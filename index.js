@@ -17,7 +17,8 @@ app.use(cookieParser());
 app.use(cors({
   origin: "https://www.texmonlogistics.co.ke",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 
